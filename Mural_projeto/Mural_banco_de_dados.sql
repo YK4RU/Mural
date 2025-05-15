@@ -7,7 +7,8 @@ create table usuario(
     nome varchar(255),
     senha varchar(255) not null,
     descricao varchar(255),
-    url_da_imagem_do_perfil varchar(500)
+    url_da_imagem_do_perfil varchar(500) not null,
+    url_da_imagem_do_banner varchar(500) not null
 );
 
 create table postagem(
@@ -20,7 +21,8 @@ create table postagem(
 
 create table pastas (
 	id_pasta serial primary key,
-    salvo int references postagem(postagem_id)
+    id_postagem int references postagem(postagem_id),
+    id_usuario int references usuario(id_usuario)
 );
 
 create table comentarios(
@@ -38,6 +40,7 @@ create table comentarios_dos_comentarios(
 
 create table likes(
 	id_likes serial primary key,
+    foreign key (id_likes) references usuario(id_usuario),
     id_postagem int references postagem(postagem_id),
     valor int
 );
@@ -45,5 +48,6 @@ create table likes(
 create table mural(
 	id_mural serial primary key,
 	url_das_conquistas varchar(500),
+    id_usuario int references usuario(id_usuario),
 	texto text
 );
