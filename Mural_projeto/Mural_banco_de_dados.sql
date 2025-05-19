@@ -39,10 +39,15 @@ create table comentarios_dos_comentarios(
 );
 
 create table likes(
-	id_likes serial primary key,
+	id_likes serial,
     foreign key (id_likes) references usuario(id_usuario),
     id_postagem int references postagem(postagem_id),
     valor int
+);
+
+create table seguidor(
+	id_usuario int references usuario(id_usuario),
+    id_usuario1 int references usuario(id_usuario)
 );
 
 create table mural(
