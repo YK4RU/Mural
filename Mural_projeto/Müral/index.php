@@ -18,10 +18,6 @@
                 <input type="email" placeholder="teste@gmail.com" class="input" id="email" name="email" require>
             </p>
             <p>
-                <label for="nome-usuario" class="titulo">nome de usuário:</label>
-                <input type="text" class="input" placeholder="não obrigatório..."   id="nome-usuario" name="nome-usuario">
-            </p>
-            <p>
                 <label for="senha"class="titulo">senha:</label>
                 <input type="password" placeholder="12345"  class="input"  id="senha" name="senha" require>
             </p>

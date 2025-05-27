@@ -5,7 +5,6 @@ session_start();
 if (isset($_POST["email"]) && isset($_POST["senha"]) && isset($_POST["nome-usuario"])) {
     $email = trim($_POST["email"]);
     $senha = trim($_POST["senha"]);
-    $nome_usuario = trim($_POST["nome-usuario"]);
 
     if (empty($email)) {
         echo "O email é obrigatório";
