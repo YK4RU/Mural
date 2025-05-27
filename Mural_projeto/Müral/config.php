@@ -2,7 +2,7 @@
 require_once("conexao.php");
 session_start();
 
-if (isset($_POST["email"]) && isset($_POST["senha"]) && isset($_POST["nome-usuario"])) {
+if (isset($_POST["email"]) && isset($_POST["senha"])) {
     $email = trim($_POST["email"]);
     $senha = trim($_POST["senha"]);
 
