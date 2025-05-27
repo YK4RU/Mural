@@ -20,14 +20,13 @@ if (isset($_POST["email"]) && isset($_POST["senha"]) && isset($_POST["nome-usuar
         $instrucao->execute();
         $usuario = $instrucao->fetch();
 
-
         if ($usuario and $senha === $usuario['senha']) {
                 $_SESSION['email'] = $usuario['email'];
                 header("location: home_page.php");
                 exit;
-        } 
+        }
         else {
-                echo "Senha incorreta";
+                echo "Email ou Senha incorreta";
         }
     } 
 }
