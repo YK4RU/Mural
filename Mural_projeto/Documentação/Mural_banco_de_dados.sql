@@ -22,8 +22,8 @@ alter table usuario
 add data_nasc date;
 
 create table postagem(
-	id_postagem serial primary key,
-    foreign key (id_postagem) references usuario(id_usuario),
+	postagem_id serial primary key,
+    foreign key (postagem_id) references usuario(id_usuario),
     url_da_imagem varchar(500),
 	descricao varchar(255),
 	data_de_postagem timestamp default current_timestamp
