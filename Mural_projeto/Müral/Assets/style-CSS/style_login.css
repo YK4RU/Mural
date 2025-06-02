@@ -5,18 +5,16 @@
 }
 
 body {
-    font-family: "Poetsen One", sans-serif;
-    color: #ff00a2;
-    background-color: #2d0370;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: "Poetsen One", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fffef2;
 }
 
 #formulario {
-    background-color: #a785da;
+    background-color: #fffba7;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
@@ -25,27 +23,26 @@ body {
     box-sizing: border-box;
 }
 
-#botao {
+.botao {
     width: 100%;
     padding: 12px;
-    background-color: #cc00ff;
+    background-color: #cd0909ac;
     color: rgb(241, 231, 255);
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-#botao:hover {
-    background-color: #f700ff;
+.botao:hover {
+    background-color: #ff1b1bca;
 }
 
 .input{
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border: 1px solid #9d4cff;
+    border: 1px solid #b10000;
     border-radius: 4px;
     font-size: 16px;
     outline: none;
@@ -53,7 +50,7 @@ body {
 }
 
 .input:focus {
-    border-color: #5800a0;
+    border-color: #ac0000;
 }
 
 
