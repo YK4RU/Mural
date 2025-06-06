@@ -4,5 +4,5 @@
     }
     session_unset();
     session_destroy();
-    header('location: pagina_login.php');
+    header('location: Mural/index.php');
 ?>
