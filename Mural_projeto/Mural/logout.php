@@ -4,5 +4,5 @@
     }
     session_unset();
     session_destroy();
-    header('location: Mural/index.php');
+    header('location: index.php');
 ?>
