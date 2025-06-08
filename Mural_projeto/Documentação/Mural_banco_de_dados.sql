@@ -1,12 +1,6 @@
 CREATE DATABASE mural;
 USE mural;
 
-create table login(
-	id_usuario serial primary key,
-	email varchar(255) not null,
-	senha varchar(255) not null
-);
-
 create table usuario(
 	id_usuario serial primary key,
 	email varchar(255) unique,
