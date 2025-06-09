@@ -10,6 +10,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="formulario">
+        <form action="" method="POST">
+            <?php include_once ("config.php");?>
+            <p>
+                <label for="email" class="titulo"> email:</label>     
+                <input type="email" placeholder="teste@gmail.com" class="input" id="email" name="email" require>
+            </p>
+            <p>
+                <label for="senha"class="titulo">senha:</label>
+                <input type="password" placeholder="12345"  class="input"  id="senha" name="senha" require>
+            </p>
+             <p>
+                <input type="submit" class="botao">
+             </p>
+        </form>
+    </div>       
+
+    </body>
+    </html>
     <!-- <header id="cabecalho">
         <div>
             <div id="titulo">
@@ -39,22 +58,3 @@
         </div>
         
     </aside> -->
-        <div id="formulario">
-            <form action="" method="POST">
-                <?php include_once ("config.php");?>
-                <p>
-                    <label for="email" class="titulo"> email:</label>     
-                    <input type="email" placeholder="teste@gmail.com" class="input" id="email" name="email" require>
-                </p>
-                <p>
-                    <label for="senha"class="titulo">senha:</label>
-                    <input type="password" placeholder="12345"  class="input"  id="senha" name="senha" require>
-                </p>
-                <p>
-                    <input type="submit" class="botao">
-                </p>
-            </form>
-        </div>       
-
-</body>
-</html>
