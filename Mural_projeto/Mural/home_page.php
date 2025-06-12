@@ -14,14 +14,15 @@
 </head>
 <body>
     <div>
-        <h1>
-            Home page temporaria...
-        </h1>
-    </div>
-    <br>
-    <div>
         <p>
             <a href="logout.php">Sair</a>
+        </p>        
+    </div>
+    <div>
+        <p>
+            <a href="Perfil/perfil.php">
+                <img src="Assets/imagens/Olho_aberto.png" alt="foto_de_perfil">
+            </a>
         </p>        
     </div>
 </body>
