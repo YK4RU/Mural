@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* @ */
+
+@font-face {
+    font-family: Hey_Comic;
+    src: local(Hey_Comic), url(../fonte/Hey_Comic.ttf);
+}
+@font-face {
+    font-family: "Hey Comic";
+    src: local("Hey Comic"), url(../fonte/Hey_Comic.otf);
+}
+
+/* /@ */
+
+body {
+  font-family: "Hey Comic", sans-serif;
+  background-color: #fffef2;
+}
+
+/* img */
+
+.container{
+    max-width: 100%;
+    position: relative;
+}
+
+.container>figure{
+    max-width: 100%;
+    position: absolute;
+}
+
+.container>figure>#imagem_banner{
+    top: 20px;
+    left: 0;
+    z-index: 1;
+}
+
+.container>a{
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.container>figure>#imagem_perfil{
+    top: 40px;
+    left: 60px;
+    z-index: 3;
+}

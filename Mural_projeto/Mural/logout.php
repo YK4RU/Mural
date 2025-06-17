@@ -4,5 +4,5 @@
     }
     session_unset();
     session_destroy();
-    header('location: pagina_inicial.php');
+    header('location: index.php');
 ?>

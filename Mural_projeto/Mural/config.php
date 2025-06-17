@@ -6,12 +6,9 @@ if (isset($_POST["email"]) && isset($_POST["senha"])) {
     $email = trim($_POST["email"]);
     $senha = trim($_POST["senha"]);
 
-    if (empty($email)) {
-        echo "O email é obrigatório";
+    if (empty($email) || empty($senha)) {
+        echo "Preencha todos os campos";
     }
-    elseif (empty($senha)) {
-        echo "A senha é obrigatória";
-    } 
     else {
         $sql_code = "SELECT * FROM usuario WHERE email = :email";
         $instrucao = $conexao->prepare($sql_code);
