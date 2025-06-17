@@ -4,12 +4,54 @@
     box-sizing: border-box;
 }
 
+/* @ */
+
+@font-face {
+    font-family: Hey_Comic;
+    src: local(Hey_Comic), url(../fonte/Hey_Comic.ttf);
+}
+@font-face {
+    font-family: "Hey Comic";
+    src: local("Hey Comic"), url(../fonte/Hey_Comic.otf);
+}
+
+/* /@ */
+
+/* extensoes---- auto save on windows-- bearded theme --- */
+
 body {
     font-family: "Poetsen One", sans-serif;
     color: #8d0000;
     background-color: #fffef2;
+}
+
+#cabecalho{
+    background-color: #ffb34f;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#search_box{
+    position: absolute;
+    top: 1.5%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+
+    background-color: #fffef2;
+    padding: 5px;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: space-between;
+}
+#search_input{
+    background: none;
+    border: 0;
+    outline: 0;
+
+}
+#search_png{
+    max-width: 20px;
 }
 
