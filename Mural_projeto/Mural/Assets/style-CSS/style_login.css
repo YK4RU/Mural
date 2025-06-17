@@ -4,14 +4,177 @@
     box-sizing: border-box;
 }
 
-body {
-  font-family: "Poetsen One", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fffef2;
+/* @ */
+
+@font-face {
+    font-family: Hey_Comic;
+    src: local(Hey_Comic), url(../fonte/Hey_Comic.ttf);
 }
+@font-face {
+    font-family: "Hey Comic";
+    src: local("Hey Comic"), url(../fonte/Hey_Comic.otf);
+}
+
+/* /@ */
+
+body {
+    display: flex;
+    font-family: "Hey Comic", sans-serif;
+    background-color: #fffef2;
+}
+
+section {
+    display: flex;
+}
+
+#cabecalho{
+    background-color: #FFF9BD;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+
+/* ------------------------ textos ------------------------------- */
+
+#titulo_mural>p{
+    font-family: "Hey Comic", sans-serif;
+    font-size: 30px;
+    color: #9d0303;
+}
+
+#titulo_formulario{
+    text-align: center;
+    color: #9d0303;
+    font-size: 30px;
+}
+
+#termos_e_politica_texto{
+    font-family: serif;
+    font-size: 15px;
+}
+
+#titulo{
+    font-size: 30px;
+}
+
+#ou_paragrafo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#criar_conta_paragrafo{
+    display: flex;
+    flex-wrap: nowrap;
+}
+#criar_conta_paragrafo>a{
+    color: #8c0000;
+    text-decoration: none;
+}
+
+#botao_google>a{
+    display: flex;
+    flex-wrap: nowrap;
+    color: #8c0000;
+    text-decoration: none;
+
+}
+
+/* --------------------------- /textos -------------------------------- */
+
+
+/* -------------------------- BOTÕES ----------------------------------*/
+
+#botoes_cabecalho{
+    display: flex;
+}
+
+#botao_google{
+    display: flex;
+    height: 30px;
+    padding: 5px;
+    border: solid black 1px;
+    border-radius: 100px;
+}
+
+#botao_branco{
+    background-color: #fffef2;
+    border-radius: 100px;
+    padding: 10px;
+    box-shadow: 0 1px 3px #90000042;
+}
+#botao_branco>a{
+    color: #8c0000;
+    text-decoration: none;
+}
+#botao_branco:hover, #botao_branco:active{
+    background-color: #dcd9c3;
+}
+#botao_branco>a:active {
+    color: #710000;
+}
+
+
+#botao_entrar{
+    width: 100%;
+    height: 30px;
+    background-color: #6F3198;
+    border-radius: 100px;
+    cursor: pointer;
+    color: #fffef2;
+    font-family: "Hey Comic", sans-serif;  
+}
+#botao_entrar:hover, #botao_entrar:active{
+    background-color: #4d1d6d;
+}
+#botao_entrar:active {
+    color: #d5d4cd;
+}
+
+
+#botao_entrar_sem_conta{
+    padding: 10px;
+    background-color: #6F3198;
+    border-radius: 100px;
+    cursor: pointer;    
+}
+#botao_entrar_sem_conta>a{
+    color: #fffef2;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#botao_entrar_sem_conta:hover, #botao_entrar_sem_conta:active{
+    background-color: #4d1d6d;
+}
+#botao_entrar_sem_conta>a:active {
+    color: #d5d4cd;
+}
+
+/* ---------------------------------- /BOTÕES ------------------------------ */
+
+
+
+/* ---------------------------------- imagens ------------------------------ */
+
+#container_imagem{
+    max-width: 50%;
+}
+
+#boneco{
+    max-width: 100%;
+}
+#lampada{
+    width: 50%;
+}
+
+#google_logo{
+    max-width: 20px;
+}
+
+/* -------------------------------- /imagens ------------------------------ */
+
 
 #formulario {
     background-color: #fffba7;
@@ -19,23 +182,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 200px;
     box-sizing: border-box;
-}
-
-.botao {
-    width: 100%;
-    padding: 12px;
-    background-color: #cd0909ac;
-    color: rgb(241, 231, 255);
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.botao:hover {
-    background-color: #ff1b1bca;
 }
 
 .input{
@@ -51,13 +199,4 @@ body {
 
 .input:focus {
     border-color: #ac0000;
-}
-
-
-
-.titulo{
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 5px;
-    display: inline-block;
 }

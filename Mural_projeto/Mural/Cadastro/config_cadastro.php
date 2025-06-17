@@ -1,6 +1,8 @@
 <?php
 require_once("../conexao.php");
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
 
 if (isset($_POST["email"]) && isset($_POST["senha"]) && isset($_POST["nome_de_usuario"])) {
     $email = trim($_POST["email"]);
