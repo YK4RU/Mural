@@ -6,14 +6,13 @@ create table usuario(
 	email varchar(255) unique,
     nome_de_usuario varchar(255) unique,
     senha varchar(255) not null,
-    nome varchar(255),
-    descricao varchar(255),
-    url_da_imagem_do_perfil varchar(500) not null,
-    url_da_imagem_do_banner varchar(500) not null
+    nome varchar(255) default '',
+    descricao varchar(255) default '',
+    data_nasc datetime default current_timestamp,
+    url_da_imagem_do_perfil varchar(500) default 'perfil_default.png',
+    url_da_imagem_do_banner varchar(500) default 'banner_default.png',
+    data_de_criacao timestamp default current_timestamp
 );
-
-alter table usuario
-add data_nasc date;
 
 create table postagem(
 	postagem_id serial primary key,
