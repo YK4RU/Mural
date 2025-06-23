@@ -22,20 +22,16 @@ body {
     background-color: #fffef2;
 }
 
-#cabecalho{
-    background-color: #FFF9BD;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-}
-
 
 /* ------------------------ textos ------------------------------- */
 
-#titulo_mural>p{
+#titulo_mural{
     font-family: "Hey Comic", sans-serif;
-    font-size: 30px;
+    font-size: 40px;
     color: #9d0303;
+
+    position: absolute;
+    left: 90%;
 }
 
 #titulo_formulario{
@@ -50,12 +46,6 @@ body {
     font-size: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-#titulo{
-    font-size: 50px;
-    font-weight: bold;
-    padding: 10px;
 }
 
 #ou_paragrafo{
@@ -75,21 +65,32 @@ body {
     text-decoration: none;
 }
 
-#botao_google>a{
-    color: #8c0000;
-    text-decoration: none;
 
-}
-
-/* --------------------------- /textos -------------------------------- */
-
+/* ------------------------ /textos ------------------------------- */
 
 /* -------------------------- BOTÕES ----------------------------------*/
 
-#botoes_cabecalho{
-    display: flex;
+#botao_criar{
+    width: 100%;
+    height: 30px;
+    background-color: #6F3198;
+    border-radius: 100px;
+    cursor: pointer;
+    color: #fffef2;
+    font-family: "Hey Comic", sans-serif; 
+    border: 0; 
+}
+#botao_criar:hover, #botao_criar:active{
+    background-color: #4d1d6d;
+}
+#botao_criar:active {
+    color: #d5d4cd;
 }
 
+#botao_google>a{
+    color: #8c0000;
+    text-decoration: none;
+}
 #botao_google{
     display: flex;
     height: 30px;
@@ -98,89 +99,57 @@ body {
     border-radius: 100px;
 }
 
-#botao_branco{
-    background-color: #fffef2;
-    border-radius: 100px;
-    padding: 10px;
-    box-shadow: 0 1px 3px #90000042;
-}
-#botao_branco>a{
-    color: #8c0000;
-    text-decoration: none;
-}
-#botao_branco:hover, #botao_branco:active{
-    background-color: #dcd9c3;
-}
-#botao_branco>a:active {
-    color: #710000;
-}
+/* -------------------------- /BOTÕES ----------------------------------*/
 
-
-#botao_entrar{
-    width: 100%;
-    height: 30px;
-    background-color: #6F3198;
-    border-radius: 100px;
-    cursor: pointer;
-    color: #fffef2;
-    font-family: "Hey Comic", sans-serif;  
-}
-#botao_entrar:hover, #botao_entrar:active{
-    background-color: #4d1d6d;
-}
-#botao_entrar:active {
-    color: #d5d4cd;
-}
-
-
-#botao_entrar_sem_conta{
-    padding: 10px;
-    background-color: #6F3198;
-    border-radius: 100px;
-    cursor: pointer;    
-}
-#botao_entrar_sem_conta>a{
-    color: #fffef2;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-#botao_entrar_sem_conta:hover, #botao_entrar_sem_conta:active{
-    background-color: #4d1d6d;
-}
-#botao_entrar_sem_conta>a:active {
-    color: #d5d4cd;
-}
-
-/* ---------------------------------- /BOTÕES ------------------------------ */
-
-
-
-/* ---------------------------------- imagens ------------------------------ */
-
-#container_imagem{
-    max-width: 50%;
-}
-
-#boneco{
-    max-width: 50%;
-    position: absolute;
-    top: 45%;
-    left: 13%;
-}
-#lampada{
-    position: absolute;
-    width: 20%;
-    right: 50%;
-    top: 13%;
-}
+/* -------------------------------- imagens ------------------------------ */
 
 #google_logo{
     max-width: 20px;
 }
 
-/* -------------------------------- /imagens ------------------------------ */
+#mao>img{
+    max-width: 100px;
+    transform: scaleX(-1);
 
+    position: absolute;
+    top: 60%;
+    left: 90%;
+}
+#chapeu>img{
+    max-width: 200px;
+    transform: scaleX(-1);
+    transform: rotate(45deg);
+
+    position: absolute;
+    top: 2%;
+    left: 39%;
+}
+#karuy>img{
+    max-width: 300px;
+    transform: scaleX(-1);
+
+    position: absolute;
+    top: 5%;
+    left: 100%; 
+}
+#balao>img{
+    max-width: 300px;
+    transform: scaleX(-1);
+
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+#solzin>img{
+    max-width: 250px;
+    transform: scaleX(-1);
+
+    position: absolute;
+    top: 60%;
+    left: 80%;
+}
+
+/* -------------------------------- /imagens ------------------------------ */
 
 #formulario {
     background-color: #fffba7;
@@ -188,11 +157,12 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     max-width: 300px;
-    height: 500px;
+    height: 570px;
     box-sizing: border-box;
 
     position: absolute;
-    left: 65%;
+    left: 10%;
+    top: 10%;
 }
 
 .input{

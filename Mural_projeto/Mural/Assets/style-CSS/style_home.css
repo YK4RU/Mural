@@ -17,7 +17,6 @@
 
 /* /@ */
 
-/* extensoes---- auto save on windows-- bearded theme --- */
 
 body {
     font-family: "Poetsen One", sans-serif;
@@ -25,27 +24,59 @@ body {
     background-color: #fffef2;
 }
 
+
+#botao_criar_postagem{
+    position: absolute;
+    top: 90%;
+    left: 95%;
+}
+#botao_criar_postagem>button{
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 100%;
+    box-shadow: 0 2px 8px #8d000021;
+    border: 0;
+    outline: 0;
+
+}
+#botao_criar_postagem_A>img{
+    min-width: 50px;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+
+/* ------------------ cabeçalho ------------------- */
+
 #cabecalho{
-    background-color: #ffb34f;
+    background-color: #FFF9BD;
     display: flex;
     justify-content: space-between;
     padding: 5px;
 }
 
-#search_box{
-    position: absolute;
-    top: 1.5%;
-    left: 50%;
-    transform: translate( -50%, -50%);
+#titulo{
+    font-family: Hey_Comic, sans-serif;
+    font-size: 30px;
+}
 
+#foto_perfil_e_search_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search_box{
     background-color: #fffef2;
     padding: 5px;
     border-radius: 50px;
+    box-shadow: 0 2px 8px #8d000021;
 
     display: flex;
     justify-content: space-between;
 }
 #search_input{
+    color: #8c0000;
     background: none;
     border: 0;
     outline: 0;
@@ -55,3 +86,61 @@ body {
     max-width: 20px;
 }
 
+
+#foto_perfil{
+    max-width: 25px;
+    max-height: 25px;
+    padding-left: 10px;
+    padding-top: 4px;
+}
+
+#foto_perfil>button{
+    max-width: 25px;
+    max-height: 25px;
+    border-radius: 100px;
+    box-shadow: 0 2px 8px #8d000021;
+    border: 0;
+    outline: 0;
+}
+
+#perfil_A>img{
+    min-width: 25px;
+    max-width: 25px;
+    max-height: 25px;
+    border-radius: 100px;
+}
+
+/* ------------------ /cabeçalho ------------------- */
+
+/* ------------------ barra lateral ------------------- */
+
+#barra_lateral{
+    background-color: #FFF9BD;
+    max-width: 50px;
+    max-height: 100%;
+}
+
+.botao_barra_lateral{
+    max-width: 30px;
+    padding: 10px;
+}
+.botao_barra_lateral_A>img{
+    max-width: 30px;
+}
+
+#sair_A{
+    margin-top: 306px;
+}
+#sair_A>a{
+    padding: 10px;
+    color: #8c0000;
+    text-decoration: none;
+}
+
+#florzinha>img{
+    max-width: 50px;
+    transform: scaleX(-1);
+    margin-top: 10px;
+}
+
+/* ------------------ /barra lateral ------------------- */
