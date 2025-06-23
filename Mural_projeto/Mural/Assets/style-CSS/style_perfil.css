@@ -22,32 +22,155 @@ body {
   background-color: #fffef2;
 }
 
-/* img */
 
-.container{
-    max-width: 100%;
-    position: relative;
-}
+/* ------------------ cabeçalho ------------------- */
 
-.container>figure{
-    max-width: 100%;
+#banner_perfil_foto{
     position: absolute;
 }
 
-.container>figure>#imagem_banner{
-    top: 20px;
-    left: 0;
-    z-index: 1;
+#imagem_banner>img{
+    width: 1485px;
+    max-height: 200px;
+    position: absolute;
+    left: 50px;
 }
 
-.container>a{
-    top: 0;
-    left: 0;
-    z-index: 2;
+#imagem_perfil>img{
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 170px;
+    left: 100px;
 }
 
-.container>figure>#imagem_perfil{
-    top: 40px;
-    left: 60px;
-    z-index: 3;
+#edit_perfil{
+    background-color: #fffef2;
+    border-radius: 13px;
+    padding: 5px;
+
+    position: absolute;
+    top: 10px;
+    left: 90%;
 }
+#edit_perfil>a{
+    color: #8c0000;
+    text-decoration: none;
+}
+
+
+#desc_perfil>p{
+    position: absolute;
+    top: 200px;
+    left: 190px;
+
+    font-family: serif;
+    font-size: 15px;
+}
+#nome_perfil{
+    position: absolute;
+    top: 250px;
+    left: 100px;
+
+    font-size: 30px;
+}
+#user>p{
+    position: absolute;
+    top: 280px;
+    left: 100px;
+
+    font-family: serif;
+}
+
+
+/* ------------------ /cabeçalho ------------------- */
+
+
+/* ------------------ barra lateral ------------------- */
+
+#titulo{
+    color: #8c0000;
+    font-size: 15px;
+}
+
+#barra_lateral{
+    background-color: #FFF9BD;
+    max-width: 50px;
+    max-height: 100%;
+}
+
+.botao_barra_lateral{
+    max-width: 30px;
+    padding: 10px;
+}
+.botao_barra_lateral_A>img{
+    max-width: 30px;
+}
+
+#sair_A{
+    margin-top: 330px;
+}
+#sair_A>a{
+    padding: 10px;
+    color: #8c0000;
+    text-decoration: none;
+}
+
+#florzinha>img{
+    max-width: 50px;
+    transform: scaleX(-1);
+    margin-top: 10px;
+}
+
+/* ------------------ /barra lateral ------------------- */
+
+
+/* ------------------ outra barra lateral ------------------- */
+
+#outra_barra_lateral{
+    border-left: #8c0000 solid 1px;
+    padding-left: 10px;
+    min-height: 60%;
+
+    position: absolute;
+    top: 30%;
+    left: 80%;
+}
+
+#mural_links>a{
+    text-decoration: none;
+    color: #8c0000;
+    font-size: 20px;
+
+}
+
+#pasta_links>a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+
+}
+
+#botao_criar_postagem>a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+
+}
+#botao_criar_postagem>img{
+    min-width: 50px;
+    max-width: 50px;
+    max-height: 50px;
+
+}
+
+/* ------------------ /outra barra lateral ------------------- */
+
+
+/* ------------------ postagem ------------------- */
+
+/* eu sei la como faz isso... */
