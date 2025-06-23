@@ -16,11 +16,15 @@ if(isset($_FILES["foto_perfil"]) || isset($_FILES["banner"]) || isset($_POST["no
     $arquivo_perfil = $_FILES['foto_perfil'];
     $nome_arquivo_perfil = uniqid() . '_' . basename($arquivo_perfil['name']);
 
+    move_uploaded_file($arquivo_perfil['tmp_name'], $pasta_perfil . $nome_arquivo_perfil);
+
     $perfil = 'Assets/imagens/uploads/perfil/' . $nome_arquivo_perfil;
 
     $pasta_banner = '../Assets/imagens/uploads/banner/';
     $arquivo_banner = $_FILES['banner'];
     $nome_arquivo_banner = uniqid() . '_' . basename($arquivo_banner['name']);
+
+    move_uploaded_file($arquivo_banner['tmp_name'], $pasta_banner . $nome_arquivo_banner);
 
     $banner = 'Assets/imagens/uploads/banner/' . $nome_arquivo_banner;
 
