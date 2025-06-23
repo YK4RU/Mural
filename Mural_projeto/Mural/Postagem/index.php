@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <?php require_once("config_postagem.php"); ?>
         <p>
             <label>nao sei oq escrever</label>

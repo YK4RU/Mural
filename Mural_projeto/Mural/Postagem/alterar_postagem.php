@@ -1,14 +1,14 @@
 <?php
-require_once("../conexao.php");
-require_once('../protect.php');
+// require_once("../conexao.php");
+// require_once('../protect.php');
 
-$sql_select = $conexao->prepare("SELECT descricao FROM postagem WHERE email = :email");
-$sql_select->bindValue(':email', $_SESSION['email']);
-$sql_select->execute();
+// $sql_select = $conexao->prepare("SELECT descricao FROM postagem WHERE email = :email");
+// $sql_select->bindValue(':email', $_SESSION['email']);
+// $sql_select->execute();
             
-if($sql_select->rowCount() > 0) {
-    $dados = $sql_select->fetch();
-}  
+// if($sql_select->rowCount() > 0) {
+//     $dados = $sql_select->fetch();
+// }  
 
 //oque q eu to fazendo meu deus........como usa o id do aaaaaaaaaaaaaaaa
 //usar chave estrangeira
@@ -23,7 +23,7 @@ if($sql_select->rowCount() > 0) {
 </head>
 <body>
     <form action="" method="post">
-        <?php require_once("config_alterar_postagem.php"); ?>
+        <!-- <?php require_once("config_alterar_postagem.php"); ?> -->
         <p>
             <label>nao sei oq escrever</label>
         </p>
