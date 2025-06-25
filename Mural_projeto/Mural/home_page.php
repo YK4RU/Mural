@@ -2,9 +2,12 @@
 require_once('conexao.php');
 require_once('protect.php');
 
-$sql_select_img = $conexao->prepare("SELECT url_da_imagem_do_perfil FROM usuario WHERE email = :email");
-$sql_select_img->bindValue(':email', $_SESSION['email']);
+$id = $_SESSION['id_usuario'];
+
+$sql_select_img = $conexao->prepare("SELECT url_da_imagem_do_perfil FROM usuario WHERE id_usuario = :id");
+$sql_select_img->bindValue(':id', $id);
 $sql_select_img->execute();
+ 
 $imagem = $sql_select_img->fetch();
             
 ?>
@@ -70,9 +73,36 @@ $imagem = $sql_select_img->fetch();
             <img src="Assets/imagens/flor.png" alt="">
         </div>
     </aside>
+
+    <!-- postagens -->
+    <section>
+        <?php
+        // $post_id = $_SESSION['postagem_id'];
+        // $sql_select_post = $conexao->prepare("SELECT postagem.descricao_postagem, postagem.url_da_imagem FROM postagem INNER JOIN usuario ON (postagem.id_usuario = usuario.id_usuario) WHERE postagem_id = :id_post");
+        // $sql_select_post->bindValue(':id_post', $post_id);
+            // if ($sql_select_post->execute()) {
+            //     while ($rs = $sql_select_post->fetch()) {?>
+                
+            <div id="postagem">
+                <?php if (!empty($rs['url_da_imagem'])): ?>
+                    <img src="<?php 
+                        // echo $rs['url_da_imagem']; 
+                        ?>" alt="">
+                <?php endif; ?>
+                <p><?php 
+                // echo $rs['descricao_postagem'];
+                ?></p>
+            </div>
+
+            <?php
+                // }}
+            ?>
+    </section>
+    <!-- /postagens -->
+
     <section>
             <div id="botao_criar_postagem">
-                <button><a href="Postagem/index.php" id="botao_criar_postagem_A"><img src="Assets/imagens/botao_criar.png" alt="criar"></a></button>       
+                <button><a href="Postagem" id="botao_criar_postagem_A"><img src="Assets/imagens/botao_criar.png" alt="criar"></a></button>       
             </div>
     </section>
 </body>
