@@ -165,6 +165,11 @@ body {
     top: 10%;
 }
 
+.mensagem_erro{
+    color: #8c0000;
+    font-size: 13px;
+}
+
 .input{
     width: 100%;
     padding: 12px;
