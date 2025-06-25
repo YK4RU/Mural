@@ -5,7 +5,7 @@ require_once('../protect.php');
 $id = $_SESSION['id_usuario'];
 $id_post = $_SESSION['postagem_id'];
 
-$sql_select = $conexao->prepare("SELECT * FROM postagem WHERE id_usuario = :id");
+$sql_select = $conexao->prepare("SELECT * FROM postagem INNER JOIN usuario ON (postagem.id_usuario = usuario.id_usuario) WHERE usuario.id_usuario = :id");
 $sql_select->bindValue(':id', $id);
 $sql_select->execute();
 

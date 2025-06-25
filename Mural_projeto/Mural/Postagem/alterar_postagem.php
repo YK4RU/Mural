@@ -24,7 +24,7 @@ if($sql_select->rowCount() > 0) {
     <title>Alterar postagem</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" method="GET">
         <?php require_once("config_alterar_postagem.php"); ?>
         <p id="titulo">Alterar postagem</p>
         <div>
