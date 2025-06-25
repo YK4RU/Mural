@@ -9,7 +9,7 @@ if (isset($_POST["email"]) && isset($_POST["senha"])) {
     $senha = trim($_POST["senha"]);
 
     if (empty($email) || empty($senha)) {
-        echo "Preencha todos os campos";
+        echo '<p class="mensagem_erro">Preencha todos os campos.</p>';
     }
     else {
         $sql_code = "SELECT * FROM usuario WHERE email = :email";
@@ -27,7 +27,7 @@ if (isset($_POST["email"]) && isset($_POST["senha"])) {
             exit;
         }
         else {
-                echo "Email ou Senha incorreta";
+            echo '<p class="mensagem_erro">Email ou Senha incorretos.</p>';
         }
     } 
 }
