@@ -9,11 +9,6 @@ $sql_select->execute();
 if($sql_select->rowCount() > 0) {
     $dados = $sql_select->fetch();
 }     
-
-$sql_select_img = $conexao->prepare("SELECT url_da_imagem_do_perfil, url_da_imagem_do_banner FROM usuario WHERE email = :email");
-$sql_select_img->bindValue(':email', $_SESSION['email']);
-$sql_select_img->execute();
-$imagem = $sql_select_img->fetch();
             
 ?>
 
@@ -34,8 +29,8 @@ $imagem = $sql_select_img->fetch();
                 ?>
 
                 <div id="imagem_banner">
-                    <?php if (!empty($imagem['url_da_imagem_do_banner'])): ?>
-                        <img src="../<?php echo $imagem['url_da_imagem_do_banner']; ?>" alt="Banner atual">
+                    <?php if (!empty($dados['url_da_imagem_do_banner'])): ?>
+                        <img src="../<?php echo $dados['url_da_imagem_do_banner']; ?>" alt="Banner atual">
                     <?php endif; ?>
                     <p id="banner_txt">
                         Alterar banner
@@ -45,8 +40,8 @@ $imagem = $sql_select_img->fetch();
                     </p>
                 </div>
                 <div id="imagem_perfil">
-                    <?php if (!empty($imagem['url_da_imagem_do_perfil'])): ?>
-                        <img src="../<?php echo $imagem['url_da_imagem_do_perfil']; ?>" alt="Foto de perfil atual">
+                    <?php if (!empty($dados['url_da_imagem_do_perfil'])): ?>
+                        <img src="../<?php echo $dados['url_da_imagem_do_perfil']; ?>" alt="Foto de perfil atual">
                     <?php endif; ?>
                     <p id="perfil_txt">
                         Alterar imagem de perfil
