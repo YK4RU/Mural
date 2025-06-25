@@ -97,5 +97,6 @@ body {
 }
 #imagem_postagem>img{  
     max-width: 700px;
+    max-heigt: 500px;
 }
 
