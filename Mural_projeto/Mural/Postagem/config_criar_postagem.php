@@ -27,13 +27,14 @@ if(isset($_FILES["foto_postagem"]) || isset($_POST["descricao_postagem"])){
     $sql_insert->execute();
 
     if ($sql_insert->rowCount() > 0) {
-        $sql_select = $conexao->prepare("SELECT * FROM postagem WHERE id_usuario = :id");
+        $sql_select = $conexao->prepare("SELECT * FROM postagem INNER JOIN usuario ON (postagem.id_usuario = usuario.id_usuario) WHERE usuario.id_usuario = :id");
         $sql_select->bindValue(':id', $id);
         $sql_select->execute();
         $postagem = $sql_select->fetch();
 
         $_SESSION['postagem_id'] = $postagem['postagem_id'];
-        header("location: ../home_page.php");
+        
+        header("location: ../Perfil");
         exit;
     }
     
