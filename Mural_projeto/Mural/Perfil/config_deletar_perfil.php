@@ -1,17 +1,23 @@
 <?php
-    require_once("../conexao.php");
-    require_once('../protect.php');
+require_once("../conexao.php");
+require_once('../protect.php');
 
-    $sql_select = $conexao->prepare("SELECT * FROM usuario WHERE email = :email");
-    $sql_select->bindValue(':email', $_SESSION['email']);
-    $sql_select->execute();
+$id = $_SESSION['id_usuario'];
 
-    if ($sql_select->rowCount() > 0) {
-        $sql_delete = $conexao->prepare('DELETE FROM usuario WHERE email = :email');
-        $sql_delete->bindValue(':email', $_SESSION['email']);
-        $sql_delete->execute(); 
+$sql_select = $conexao->prepare("SELECT * FROM usuario WHERE email = :email");
+$sql_select->bindValue(':email', $_SESSION['email']);
+$sql_select->execute();
 
-        header("location: ../index.php");
-        exit();
-    }   
+if ($sql_select->rowCount() > 0) {
+    $sql_delete = $conexao->prepare('DELETE FROM usuario WHERE email = :email');
+    $sql_delete->bindValue(':email', $_SESSION['email']);
+    $sql_delete->execute(); 
+
+    $sql_delete_post = $conexao->prepare('DELETE FROM postagem WHERE id_usuario = :id');
+    $sql_delete_post->bindValue(':id', $id);
+    $sql_delete_post->execute(); 
+
+    header("location: ../index.php");
+    exit();
+}   
 ?>

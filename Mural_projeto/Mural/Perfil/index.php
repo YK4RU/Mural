@@ -2,18 +2,15 @@
 require_once("../conexao.php");
 require_once('../protect.php');
 
-$sql_select = $conexao->prepare("SELECT url_da_imagem_do_perfil, url_da_imagem_do_banner, nome, descricao, nome_de_usuario FROM usuario WHERE email = :email");
-$sql_select->bindValue(':email', $_SESSION['email']);
+$id = $_SESSION['id_usuario'];
+
+$sql_select = $conexao->prepare("SELECT nome, descricao, nome_de_usuario, url_da_imagem_do_perfil, url_da_imagem_do_banner FROM usuario WHERE id_usuario = :id");
+$sql_select->bindValue(':id', $id);
 $sql_select->execute();
 
 if($sql_select->rowCount() > 0) {
     $dados = $sql_select->fetch();
 }     
-
-$sql_select_img = $conexao->prepare("SELECT url_da_imagem_do_perfil, url_da_imagem_do_banner FROM usuario WHERE email = :email");
-$sql_select_img->bindValue(':email', $_SESSION['email']);
-$sql_select_img->execute();
-$imagem = $sql_select_img->fetch();
 
 ?>
 
@@ -32,13 +29,13 @@ $imagem = $sql_select_img->fetch();
         <header>
             <div id="banner_perfil_foto">
                 <div id="imagem_banner"> 
-                    <?php if (!empty($imagem['url_da_imagem_do_banner'])): ?>
-                        <img src="../<?php echo $imagem['url_da_imagem_do_banner']; ?>" alt="Foto de banner atual">
+                    <?php if (!empty($dados['url_da_imagem_do_banner'])): ?>
+                        <img src="../<?php echo $dados['url_da_imagem_do_banner']; ?>" alt="Foto de banner atual">
                     <?php endif; ?>
                 </div>
                 <div id="imagem_perfil"> 
-                    <?php if (!empty($imagem['url_da_imagem_do_perfil'])): ?>
-                        <img src="../<?php echo $imagem['url_da_imagem_do_perfil']; ?>" alt="Foto de perfil atual">
+                    <?php if (!empty($dados['url_da_imagem_do_perfil'])): ?>
+                        <img src="../<?php echo $dados['url_da_imagem_do_perfil']; ?>" alt="Foto de perfil atual">
                     <?php endif; ?>
                 </div>
             </div>
@@ -48,9 +45,29 @@ $imagem = $sql_select_img->fetch();
                 <div id="user"> <p>@<?php echo $dados['nome_de_usuario'];?></p></div>
         </header>
 
-        <!-- postagens -->
         <section>
-            <div></div>
+            <?php
+            $sql_select_post = $conexao->prepare("SELECT postagem.descricao_postagem, postagem.url_da_imagem, postagem.postagem_id FROM postagem INNER JOIN usuario ON (postagem.id_usuario = usuario.id_usuario) WHERE usuario.id_usuario = :id");
+            $sql_select_post->bindValue(':id', $id);
+                if ($sql_select_post->execute()) {
+                    while ($rs = $sql_select_post->fetch()) {?>
+                
+                <div id="postagem">
+                    
+                    <button id="post_alt_botao"><a href="../Postagem/alterar_postagem.php?id=<?php echo $rs['postagem_id']; ?>">...</a></button>
+                    <div id= "post_imagem_descricao">
+                        <div id = "post_imagem">
+                            <?php if (!empty($rs['url_da_imagem'])): ?>
+                                 <img src="../<?php echo $rs['url_da_imagem']; ?>" alt="">
+                             <?php endif; ?>
+                        </div>
+                        <p><?php echo $rs['descricao_postagem'];?></p>
+                    </div>
+                </div>
+
+            <?php
+                }}
+            ?>
         </section>
 
         <aside id="barra_lateral">
@@ -103,7 +120,7 @@ $imagem = $sql_select_img->fetch();
             
             <div id="botao_criar_postagem">
                 <img src="../Assets/imagens/botao_criar.png" alt="">
-                <a href="../Postagem/index.php">Criar</a>
+                <a href="../Postagem">Criar</a>
             </div>
         </aside>
 
