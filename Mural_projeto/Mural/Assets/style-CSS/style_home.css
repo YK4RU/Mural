@@ -29,6 +29,7 @@ body {
     position: absolute;
     top: 90%;
     left: 95%;
+
 }
 #botao_criar_postagem>button{
     max-width: 50px;
@@ -43,6 +44,10 @@ body {
     min-width: 50px;
     max-width: 50px;
     max-height: 50px;
+
+    position: absolute;
+    top: 90%;
+    left: 95%;
 }
 
 
@@ -64,11 +69,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: absolute;
+    left: 80%;
 }
 
 #search_box{
     background-color: #fffef2;
     padding: 5px;
+    width: 200px;
     border-radius: 50px;
     box-shadow: 0 2px 8px #8d000021;
 
@@ -117,7 +126,9 @@ body {
 #barra_lateral{
     background-color: #FFF9BD;
     max-width: 50px;
-    max-height: 100%;
+    max-height: 100hv;
+
+    position: fixed;
 }
 
 .botao_barra_lateral{

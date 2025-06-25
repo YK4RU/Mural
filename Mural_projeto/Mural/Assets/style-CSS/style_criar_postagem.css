@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* @ */
+
+@font-face {
+    font-family: Hey_Comic;
+    src: local(Hey_Comic), url(../fonte/Hey_Comic.ttf);
+}
+@font-face {
+    font-family: "Hey Comic";
+    src: local("Hey Comic"), url(../fonte/Hey_Comic.otf);
+}
+
+/* /@ */
+
+body {
+  font-family: "Hey Comic", sans-serif;
+  background-color: #FFF9BD;
+}
+
+#titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+    color: #ECB476;
+    font-family: "Hey Comic", sans-serif;
+    font-size: 40px;
+
+    margin-bottom: 30px;
+}
+
+#sair{
+    color: #ECB476;
+    font-size: 40px;
+    text-decoration: none;
+
+    position: absolute;
+    top: 0;
+}
+
+#botao_salvar{
+    background-color: #fffef2;
+    border-radius: 13px;
+    padding: 5px;
+    width: 130px;
+    font-size: 13px;
+
+    position: absolute;
+    top: 10px;
+    left: 90%;
+
+    border: 0;
+    outline: 0;
+}
+
+#descricao_postagem{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+
+    font-size: 25px;
+
+    background-color: #FFF9BD;
+    border: 0;
+    outline: 0;
+}
+
+#foto_postagem{
+    position: absolute;
+    top: 150px;
+    left: 40%;
+}
+
+#imagem_postagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+#imagem_postagem>img{  
+    max-width: 700px;
+}
+
+#criar{
+    background-color: #FFF9BD;
+    border: 0;
+    outline: 0;
+
+    position: absolute;
+    top: 80%;
+    left: 90%;
+}
+#criar>img{
+    max-width: 100px;
+}

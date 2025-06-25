@@ -22,6 +22,14 @@ body {
   background-color: #fffef2;
 }
 
+header{
+    min-height: 350px;
+    max-height: 350px;
+    max-width: 1100px;
+
+    border-bottom: #8c0000 solid 1px;
+}
+
 
 /* ------------------ cabeçalho ------------------- */
 
@@ -34,6 +42,8 @@ body {
     max-height: 200px;
     position: absolute;
     left: 50px;
+
+    box-shadow: 0 2px 8px #8c000033;
 }
 
 #imagem_perfil>img{
@@ -46,6 +56,8 @@ body {
     position: absolute;
     top: 170px;
     left: 100px;
+
+    box-shadow: 0 2px 8px #8c000033;
 }
 
 #edit_perfil{
@@ -98,11 +110,15 @@ body {
 }
 
 #barra_lateral{
+    width: 50px;   
+    height: 100vh;   
     background-color: #FFF9BD;
-    max-width: 50px;
-    max-height: 100%;
-}
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
 .botao_barra_lateral{
     max-width: 30px;
     padding: 10px;
@@ -138,7 +154,7 @@ body {
 
     position: absolute;
     top: 30%;
-    left: 80%;
+    left: 78%;
 }
 
 #mural_links>a{
@@ -173,4 +189,46 @@ body {
 
 /* ------------------ postagem ------------------- */
 
-/* eu sei la como faz isso... */
+#postagem{
+    min-width: 500px;
+    max-width: 500px;
+    margin: 120px;
+    padding: 20px;
+
+    display: block; 
+
+    border: #8c0000 solid 1px;
+    border-radius: 13px;
+}
+
+#post_alt_botao{
+    max-width: 33px;
+    background-color: #fffef2;
+    text-decoration: none;
+    color: #8c0000;
+    font-size: 40px;
+    border: 0;
+    outline: 0;
+}
+#post_alt_botao>a{
+    text-decoration: none;
+    color: #8c0000;
+}
+
+#post_imagem_descricao{
+    display: flex;
+
+    min-width: 456px;
+    max-width: 456px;
+}
+#post_imagem>img{
+    max-width: 300px;
+    border: #8c0000 solid 1px;
+    border-radius: 13px;
+}
+#postagem>p{
+    padding: 10px;
+}
+
+
+/* ------------------ /postagem ------------------- */
