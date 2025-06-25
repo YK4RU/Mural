@@ -24,6 +24,8 @@ body {
 
 #botao_salvar{
     background-color: #fffef2;
+    color: #b10000;
+    font-family: "Hey Comic", sans-serif;
     border-radius: 13px;
     padding: 5px;
     width: 130px;
@@ -40,6 +42,7 @@ body {
     background-color: #b10000;
     color: #fffef2;
     text-decoration: none;
+    font-size: 13px;
 
     border-radius: 13px;
     padding: 5px;
@@ -109,8 +112,6 @@ body {
 
     font-size: 25px;
     width: 1000px;
-
-    text-wrap: wrap;
 }
 
 #nome{
@@ -145,7 +146,6 @@ body {
 
 .input{
     background-color: #fffef2;
-    border-inline: 3px solid #b10000;
     border: 0;
     outline: 0;
 }
