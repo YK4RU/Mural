@@ -1,17 +1,18 @@
 <?php
-// require_once("../conexao.php");
-// require_once('../protect.php');
+require_once("../conexao.php");
+require_once('../protect.php');
 
-// $sql_select = $conexao->prepare("SELECT descricao FROM postagem WHERE email = :email");
-// $sql_select->bindValue(':email', $_SESSION['email']);
-// $sql_select->execute();
+if (isset($_GET['id'])) {
+    $id_post = intval($_GET['id']);
+}
+
+$sql_select = $conexao->prepare("SELECT descricao_postagem, url_da_imagem FROM postagem WHERE postagem_id = :id_post");
+$sql_select->bindValue(':id_post', $id_post);
+$sql_select->execute();
             
-// if($sql_select->rowCount() > 0) {
-//     $dados = $sql_select->fetch();
-// }  
-
-//oque q eu to fazendo meu deus........como usa o id do aaaaaaaaaaaaaaaa
-//usar chave estrangeira
+if($sql_select->rowCount() > 0) {
+    $dados = $sql_select->fetch();
+}  
 
 ?>
 <!DOCTYPE html>
@@ -19,26 +20,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../Assets/style-CSS/style_alt_postagem.css">
+    <title>Alterar postagem</title>
 </head>
 <body>
     <form action="" method="post">
-        <!-- <?php require_once("config_alterar_postagem.php"); ?> -->
-        <p>
-            <label>nao sei oq escrever</label>
-        </p>
-        <p>
-            <input type="file" name="foto_postagem" id="foto_postagem" accept="image/*">
-        </p>
-        <p>
-            <input type="text" name="descricao_postagem" id="descricao_postagem" placeholder="Insira uma descrição..." value="<?php echo $dados['descricao'];?>">
-        </p>
-        <p>
-            <input type="submit" value="Salvar alterações">
-        </p>
-        <p>
-            <button><a href="config_deletar_postagem.php">Deletar postagem</a></button>
-        </p>
+        <?php require_once("config_alterar_postagem.php"); ?>
+        <p id="titulo">Alterar postagem</p>
+        <div>
+            <a href="../Perfil" id="sair">X</a>
+        </div>
+        <div id="imagem_postagem">
+            <?php if (!empty($dados['url_da_imagem'])): ?>
+                <img src="../<?php echo $dados['url_da_imagem']; ?>" alt="">
+            <?php endif; ?>
+        </div>
+            <input type="text" name="descricao_postagem" id="descricao_postagem" placeholder="Insira uma descrição..." value="<?php echo $dados['descricao_postagem'];?>">
+            <input type="submit" value="Salvar alterações" id="botao_salvar">
+            <button><a href="config_deletar_postagem.php" id="botao_deletar">Deletar postagem</a></button>
     </form>
 </body>
 </html>

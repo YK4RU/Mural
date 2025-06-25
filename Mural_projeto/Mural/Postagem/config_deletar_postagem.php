@@ -1,20 +1,20 @@
 <?php
-// require_once("../conexao.php");
-// require_once('../protect.php');
+require_once("../conexao.php");
+require_once('../protect.php');
 
-// //oque q eu to fazendo meu deus........como usa o id do aaaaaaaaaaaaaaaa
-// //usar chave estrangeira
+$id = $_SESSION['id_usuario'];
+$id_post = $_SESSION['postagem_id'];
 
-// $sql_select = $conexao->prepare("SELECT * FROM postagem WHERE email = :email");
-// $sql_select->bindValue(':email', $_SESSION['email']);
-// $sql_select->execute();
+$sql_select = $conexao->prepare("SELECT * FROM postagem WHERE id_usuario = :id");
+$sql_select->bindValue(':id', $id);
+$sql_select->execute();
 
-// if ($sql_select->rowCount() > 0) {
-//     $sql_delete = $conexao->prepare('DELETE FROM postagem WHERE email = :email');
-//     $sql_delete->bindValue(':email', $_SESSION['email']);
-//     $sql_delete->execute(); 
+if ($sql_select->rowCount() > 0) {
+    $sql_delete = $conexao->prepare('DELETE FROM postagem WHERE postagem_id = :id_post');
+    $sql_delete->bindValue(':id_post', $id_post);
+    $sql_delete->execute(); 
 
-//     header("location: ../index.php");
-//     exit();
-// }   
+    header("location: ../home_page.php");
+    exit();
+}   
 ?>
