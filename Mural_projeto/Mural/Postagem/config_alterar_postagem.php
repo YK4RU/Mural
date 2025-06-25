@@ -34,5 +34,4 @@ if(isset($_GET["descricao_postagem"])){
     }
 }
 
-var_dump($id_post);
 ?>
